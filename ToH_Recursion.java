@@ -5,7 +5,8 @@ public class ToH_Recursion {
     static int sign;
 
     public static void main(String[] args) {
-        List<Long> myList = new ArrayList<Long>();
+        Hashtable<Integer, Long> myList = new Hashtable<Integer, Long>();
+        int str;
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter number of disks: ");
@@ -23,7 +24,7 @@ public class ToH_Recursion {
         System.out.println("End: " + end + "ms");
         long execution_time = end - start;
         System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
-        myList.add(execution_time);
+        myList.put(input, execution_time);
         System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
         int input2 = scan.nextInt();
 
@@ -37,12 +38,22 @@ public class ToH_Recursion {
             System.out.println("End: " + end + "ms");
             execution_time = end - start;
             System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
-            myList.add(execution_time);
+            myList.put(input, execution_time);
             System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
             input2 = scan.nextInt();
         }
 
         System.out.println(myList);
+
+        Set<Integer> keys = myList.keySet();
+        Iterator<Integer> itr = keys.iterator();
+
+        //Displaying Key and value pairs
+        while (itr.hasNext()) {
+            // Getting Key
+            str = itr.next();
+            System.out.println("Key: "+str+" & Value: "+myList.get(str));
+        }
     }
 
     public static void hanoi(int n) {
