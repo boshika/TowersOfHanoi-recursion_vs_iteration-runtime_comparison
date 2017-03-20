@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.util.*;
 
 public class ToH_Recursion {
     static int sign;
 
     public static void main(String[] args) {
+        List<Long> myList = new ArrayList<Long>();
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter number of disks: ");
@@ -19,8 +21,9 @@ public class ToH_Recursion {
         hanoi(input);
         long end = java.util.Calendar.getInstance().getTimeInMillis();
         System.out.println("End: " + end + "ms");
-        System.out.println("it took this long to complete this stuff: " + (end - start) + "ms");
-
+        long execution_time = end - start;
+        System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
+        myList.add(execution_time);
         System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
         int input2 = scan.nextInt();
 
@@ -32,10 +35,14 @@ public class ToH_Recursion {
             hanoi(input);
             end = java.util.Calendar.getInstance().getTimeInMillis();
             System.out.println("End: " + end + "ms");
-            System.out.println("it took this long to complete this stuff: " + (end - start) + "ms");
+            execution_time = end - start;
+            System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
+            myList.add(execution_time);
             System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
             input2 = scan.nextInt();
         }
+
+        System.out.println(myList);
     }
 
     public static void hanoi(int n) {
