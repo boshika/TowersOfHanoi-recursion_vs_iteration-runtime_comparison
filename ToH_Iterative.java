@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.*;
+import java.io.*;
 
 public class ToH_Iterative {
 
@@ -10,12 +11,14 @@ public class ToH_Iterative {
         direction_selector = 0;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         //invokes constructor
         ToH_Iterative o = new ToH_Iterative();
+
         Hashtable<Integer, Long> myList = new Hashtable<Integer, Long>();
         int str;
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter number of n: ");
@@ -51,7 +54,10 @@ public class ToH_Iterative {
             for (int i = 0; i < n; i++) {
                 disc_position_of[i] = 0;
             }
+
+            //checks if even or odd
             direction_selector = evenOrOdd(n);
+
             start = java.util.Calendar.getInstance().getTimeInMillis();
             System.out.println("Start: " + start + "ms");
             towerOfHanoi(n);
@@ -63,6 +69,24 @@ public class ToH_Iterative {
             System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
             input2 = scan.nextInt();
         }
+
+        System.out.println(myList);
+
+        Set<Integer> keys = myList.keySet();
+        Iterator<Integer> itr = keys.iterator();
+        PrintStream out = new PrintStream(new FileOutputStream("output.txt", true));
+        PrintStream console = System.out;
+        System.setOut(out);
+        System.out.println("-------------------- Iterative Run Times -----------------");
+        System.out.println("| Number Of Rings | Execution Time   |");
+
+        //Displaying Key and value pairs
+        while (itr.hasNext()) {
+            // Getting Key
+            str = itr.next();
+            System.out.println("|        " + str + " rings" + "  |    " + myList.get(str) + " ms" + "         |");
+        }
+
     }
 
     public static void towerOfHanoi(int n) {
