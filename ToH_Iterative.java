@@ -4,6 +4,8 @@ import java.io.*;
 
 public class ToH_Iterative {
 
+    static int MegaBytes = 1024 * 1024;
+
     private static int direction_selector; //selects direction of smallest disc according to whether the total number of discs even or odd
     private static int[] disc_position_of; //stores position of each disc. First tower from left is 0, second is 1 and third is 2
 
@@ -17,7 +19,9 @@ public class ToH_Iterative {
         ToH_Iterative o = new ToH_Iterative();
 
         Hashtable<Integer, Long> myList = new Hashtable<Integer, Long>();
+        Hashtable<Integer, Long> HeapMemory = new Hashtable<Integer, Long>();
         int str;
+        int str2;
 
         Scanner scan = new Scanner(System.in);
 
@@ -35,13 +39,46 @@ public class ToH_Iterative {
         direction_selector = evenOrOdd(n);
 
         long start = java.util.Calendar.getInstance().getTimeInMillis();
-        System.out.println("Start: " + start + "ms");
+        long totalMemory = Runtime.getRuntime().totalMemory() / MegaBytes;
+        long maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
+        long freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
+
+        System.out.println("**** Iterative Program Start Heap utilization Analysis [MB] ****");
+        System.out.println("Start Time: " + start + "ms");
+        System.out.println("JVM totalMemory also equals to initial heap size of JVM :"+ totalMemory + " MB");
+        System.out.println("JVM maxMemory also equals to maximum heap size of JVM: "+ maxMemory + " MB");
+        System.out.println("JVM freeMemory: " + freeMemory + " MB");
+        System.out.println("*******************************************************");
+        System.out.println("\n");
+
+        System.out.println("**** Building the Hanoi ****");
+
         towerOfHanoi(n);
+
+        System.out.println("****************************");
+
+        totalMemory = Runtime.getRuntime().totalMemory() / MegaBytes;
+        maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
+        freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
+        long usedMemory = maxMemory - freeMemory;
         long end = java.util.Calendar.getInstance().getTimeInMillis();
-        System.out.println("End: " + end + "ms");
         long execution_time = end - start;
-        System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
+
+        System.out.println("\n");
+        System.out.println("**** Iterative Program End Heap utilization Analysis [MB] ****");
+        System.out.println("End Time: " + end + "ms");
+        System.out.println("It took this long to complete this stuff: " + execution_time + "ms");
+        System.out.println("USED MEMORY: " + usedMemory + " MB");
+        System.out.println("totalMemory in JVM shows current size of java heap:"+totalMemory + " MB");
+        System.out.println("maxMemory in JVM: " + maxMemory + " MB");
+        System.out.println("freeMemory in JVM: " + freeMemory + " MB");
+        System.out.println("*******************************************************");
+        System.out.println("\n");
+
+        HeapMemory.put(n, usedMemory);
         myList.put(n, execution_time);
+
+        System.out.println("******************** PROMPT ***********************");
         System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
         int input2 = scan.nextInt();
 
@@ -59,24 +96,56 @@ public class ToH_Iterative {
             direction_selector = evenOrOdd(n);
 
             start = java.util.Calendar.getInstance().getTimeInMillis();
-            System.out.println("Start: " + start + "ms");
+
+            System.out.println("**** Iterative Program Start Heap utilization Analysis [MB] ****");
+            System.out.println("Start Time: " + start + "ms");
+            System.out.println("JVM totalMemory also equals to initial heap size of JVM :"+ totalMemory + " MB");
+            System.out.println("JVM maxMemory also equals to maximum heap size of JVM: "+ maxMemory + " MB");
+            System.out.println("JVM freeMemory: " + freeMemory + " MB");
+            System.out.println("*******************************************************");
+            System.out.println("\n");
+
+            System.out.println("**** Building the Hanoi ****");
+
             towerOfHanoi(n);
+
+            System.out.println("****************************");
+
             end = java.util.Calendar.getInstance().getTimeInMillis();
-            System.out.println("End: " + end + "ms");
             execution_time = end - start;
-            System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
+
+            System.out.println("\n");
+            System.out.println("**** Iterative Program End Heap utilization Analysis [MB] ****");
+            System.out.println("End Time: " + end + "ms");
+            System.out.println("It took this long to complete this stuff: " + execution_time + "ms");
+            System.out.println("USED MEMORY: " + usedMemory + " MB");
+            System.out.println("totalMemory in JVM shows current size of java heap:"+totalMemory + " MB");
+            System.out.println("maxMemory in JVM: " + maxMemory + " MB");
+            System.out.println("freeMemory in JVM: " + freeMemory + " MB");
+            System.out.println("*******************************************************");
+            System.out.println("\n");
+
+            HeapMemory.put(n, usedMemory);
             myList.put(n, execution_time);
+
+            System.out.println("******************** PROMPT ***********************");
             System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
             input2 = scan.nextInt();
         }
 
-        System.out.println(myList);
+        System.out.println("N And Run Time" + myList);
+        System.out.println("N And Usage" + HeapMemory);
 
         Set<Integer> keys = myList.keySet();
+        Set<Integer> keys2 = HeapMemory.keySet();
         Iterator<Integer> itr = keys.iterator();
+        Iterator<Integer> itr2 = keys2.iterator();
+
+
         PrintStream out = new PrintStream(new FileOutputStream("output.txt", true));
         PrintStream console = System.out;
         System.setOut(out);
+
         System.out.println("-------------------- Iterative Run Times -----------------");
         System.out.println("| Number Of Rings | Execution Time   |");
 
@@ -85,6 +154,16 @@ public class ToH_Iterative {
             // Getting Key
             str = itr.next();
             System.out.println("|        " + str + " rings" + "  |    " + myList.get(str) + " ms" + "         |");
+        }
+
+        System.out.println("-------------------- Iterative Memory Usage -----------------");
+        System.out.println("| Number Of Rings | Usage            |");
+
+        //Displaying Key and value pairs from list two
+        while (itr2.hasNext()) {
+            // Getting Key
+            str2 = itr2.next();
+            System.out.println("|        " + str2 + " rings" + "  |    " + HeapMemory.get(str2) + " MB" + "         |");
         }
 
     }

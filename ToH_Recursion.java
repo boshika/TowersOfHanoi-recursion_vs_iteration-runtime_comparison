@@ -28,7 +28,7 @@ public class ToH_Recursion {
         long maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
         long freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
 
-        System.out.println("**** Program Start Heap utilization Analysis [MB] ****");
+        System.out.println("**** Recursive Program Start Heap utilization Analysis [MB] ****");
         System.out.println("Start Time: " + start + "ms");
         System.out.println("JVM totalMemory also equals to initial heap size of JVM :"+ totalMemory + " MB");
         System.out.println("JVM maxMemory also equals to maximum heap size of JVM: "+ maxMemory + " MB");
@@ -50,7 +50,7 @@ public class ToH_Recursion {
         long execution_time = end - start;
 
         System.out.println("\n");
-        System.out.println("**** Program End Heap utilization Analysis [MB] ****");
+        System.out.println("**** Recursive Program End Heap utilization Analysis [MB] ****");
         System.out.println("End Time: " + end + "ms");
         System.out.println("It took this long to complete this stuff: " + execution_time + "ms");
         System.out.println("USED MEMORY: " + usedMemory + " MB");
@@ -77,7 +77,7 @@ public class ToH_Recursion {
             maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
             freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
 
-            System.out.println("**** Program Start Heap utilization Analysis [MB] ****");
+            System.out.println("**** Recursive Program Start Heap utilization Analysis [MB] ****");
             System.out.println("Start Time: " + start + "ms");
             System.out.println("JVM totalMemory also equals to initial heap size of JVM :"+ totalMemory + " MB");
             System.out.println("JVM maxMemory also equals to maximum heap size of JVM: "+ maxMemory + " MB");
@@ -99,7 +99,7 @@ public class ToH_Recursion {
             execution_time = end - start;
 
             System.out.println("\n");
-            System.out.println("**** Program End Heap utilization Analysis [MB] ****");
+            System.out.println("**** Recursive Program End Heap utilization Analysis [MB] ****");
             System.out.println("End Time: " + end + "ms");
             System.out.println("It took this long to complete this stuff: " + execution_time + "ms");
             System.out.println("USED MEMORY: " + usedMemory + " MB");
@@ -119,6 +119,7 @@ public class ToH_Recursion {
         }
 
         System.out.println("N And Run Time" + myList);
+        System.out.println("N And Usage" + HeapMemory);
 
         Set<Integer> keys = myList.keySet();
         Set<Integer> keys2 = HeapMemory.keySet();
@@ -139,7 +140,7 @@ public class ToH_Recursion {
         }
 
         System.out.println("-------------------- Recursive Memory Usage -----------------");
-        System.out.println("| Number Of Rings | Usage   |");
+        System.out.println("| Number Of Rings | Usage           |");
 
         //Displaying Key and value pairs from list two
         while (itr2.hasNext()) {
