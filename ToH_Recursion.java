@@ -5,12 +5,12 @@ import java.io.*;
 
 public class ToH_Recursion {
     static int sign;
-    static int KiloBytes = 1024;
+    static int MegaBytes = 1024 * 1024;
 
     public static void main(String[] args) throws FileNotFoundException {
 
         Hashtable<Integer, Long> myList = new Hashtable<Integer, Long>();
-        Hashtable<Long, Long> HeapMemory = new Hashtable<Long, Long>();
+        Hashtable<Integer, Long> HeapMemory = new Hashtable<Integer, Long>();
         int str;
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter number of disks: ");
@@ -24,31 +24,33 @@ public class ToH_Recursion {
         long start = java.util.Calendar.getInstance().getTimeInMillis();
         System.out.println("Start: " + start + "ms");
 
-        long totalMemory = Runtime.getRuntime().totalMemory() / KiloBytes;
-        long maxMemory = Runtime.getRuntime().maxMemory() / KiloBytes;
-        long freeMemory = Runtime.getRuntime().freeMemory() / KiloBytes;
+        long totalMemory = Runtime.getRuntime().totalMemory() / MegaBytes;
+        long maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
+        long freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
 
-        System.out.println("**** Heap utilization Analysis [KB] ****");
+        System.out.println("**** Heap utilization Analysis [MB] ****");
         System.out.println("JVM totalMemory also equals to initial heap size of JVM :"+ totalMemory);
         System.out.println("JVM maxMemory also equals to maximum heap size of JVM: "+ maxMemory);
         System.out.println("JVM freeMemory: " + freeMemory);
 
         hanoi(input);
 
-        totalMemory = Runtime.getRuntime().totalMemory() / KiloBytes;
-        maxMemory = Runtime.getRuntime().maxMemory() / KiloBytes;
-        freeMemory = Runtime.getRuntime().freeMemory() / KiloBytes;
-
-        System.out.println("Used Memory in JVM: " + (maxMemory - freeMemory));
+        totalMemory = Runtime.getRuntime().totalMemory() / MegaBytes;
+        maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
+        freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
+        long usedMemory = maxMemory - freeMemory;
+        System.out.println("Used Memory in JVM: " + usedMemory);
         System.out.println("totalMemory in JVM shows current size of java heap:"+totalMemory);
         System.out.println("maxMemory in JVM: " + maxMemory);
         System.out.println("freeMemory in JVM: " + freeMemory);
 
+        HeapMemory.put(1, usedMemory);
         long end = java.util.Calendar.getInstance().getTimeInMillis();
         System.out.println("End: " + end + "ms");
         long execution_time = end - start;
 
         System.out.println("it took this long to complete this stuff: " + execution_time + "ms");
+        System.out.println("USED MEMORY: " + usedMemory + " MB");
 
         myList.put(input, execution_time);
         System.out.println("Do you wish to continue, Press 1 for yes/2 for NO? ");
