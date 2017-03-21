@@ -1,14 +1,15 @@
+
 import java.util.Scanner;
 import java.util.*;
+import java.io.*;
 
 public class ToH_Recursion {
     static int sign;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Hashtable<Integer, Long> myList = new Hashtable<Integer, Long>();
         int str;
         Scanner scan = new Scanner(System.in);
-
         System.out.println("Enter number of disks: ");
         int input = scan.nextInt();
 
@@ -47,6 +48,9 @@ public class ToH_Recursion {
 
         Set<Integer> keys = myList.keySet();
         Iterator<Integer> itr = keys.iterator();
+        PrintStream o = new PrintStream(new File("output.txt"));
+        PrintStream console = System.out;
+        System.setOut(o);
 
         //Displaying Key and value pairs
         while (itr.hasNext()) {
