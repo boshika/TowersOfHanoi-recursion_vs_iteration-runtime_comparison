@@ -126,7 +126,7 @@ public class ToH_Recursion {
         Iterator<Integer> itr = keys.iterator();
         Iterator<Integer> itr2 = keys2.iterator();
 
-        PrintStream o = new PrintStream(new FileOutputStream("output.txt", true));
+        PrintStream o = new PrintStream(new FileOutputStream("Recursion_TOH_Analysis.txt", true));
         PrintStream console = System.out;
         System.setOut(o);
         System.out.println("-------------------- Recursive Run Times -----------------");

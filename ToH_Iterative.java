@@ -111,6 +111,10 @@ public class ToH_Iterative {
 
             System.out.println("****************************");
 
+            totalMemory = Runtime.getRuntime().totalMemory() / MegaBytes;
+            maxMemory = Runtime.getRuntime().maxMemory() / MegaBytes;
+            freeMemory = Runtime.getRuntime().freeMemory() / MegaBytes;
+            usedMemory = maxMemory - freeMemory;
             end = java.util.Calendar.getInstance().getTimeInMillis();
             execution_time = end - start;
 
@@ -142,7 +146,7 @@ public class ToH_Iterative {
         Iterator<Integer> itr2 = keys2.iterator();
 
 
-        PrintStream out = new PrintStream(new FileOutputStream("output.txt", true));
+        PrintStream out = new PrintStream(new FileOutputStream("Iterative_TOH_Analysis.txt", true));
         PrintStream console = System.out;
         System.setOut(out);
 
