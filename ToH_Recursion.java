@@ -48,15 +48,17 @@ public class ToH_Recursion {
 
         Set<Integer> keys = myList.keySet();
         Iterator<Integer> itr = keys.iterator();
-        PrintStream o = new PrintStream(new File("output.txt"));
+        PrintStream o = new PrintStream(new FileOutputStream("output.txt", true));
         PrintStream console = System.out;
         System.setOut(o);
+        System.out.println("-------------------- Recursive Run Times -----------------");
+        System.out.println("| Number Of Rings | Execution Time   |");
 
         //Displaying Key and value pairs
         while (itr.hasNext()) {
             // Getting Key
             str = itr.next();
-            System.out.println("Key: "+str+" & Value: "+myList.get(str));
+            System.out.println("|        " + str + " rings" + "  |    " + myList.get(str) + " ms" + "         |");
         }
     }
 
