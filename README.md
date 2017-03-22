@@ -103,9 +103,9 @@ Refer to javadocs, in the doc folder for more information.
 
 ### Run-time Graphs
 
-![Run Time Comparison](/Run Time.png)
+![Run Time Comparison](/Run Time.png?raw=true)
 
-![Memory USage](/Memory Usage.png)
+![Memory USage](/Memory Usage.png?raw=true)
 
 ## Team
 
