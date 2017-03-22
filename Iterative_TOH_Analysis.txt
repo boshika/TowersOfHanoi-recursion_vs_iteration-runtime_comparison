@@ -1,0 +1,54 @@
+-------------------- Iterative Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        10 rings  |    70 ms         |
+|        9 rings  |    12 ms         |
+|        8 rings  |    20 ms         |
+|        7 rings  |    4 ms         |
+|        6 rings  |    4 ms         |
+|        5 rings  |    2 ms         |
+|        4 rings  |    1 ms         |
+|        3 rings  |    1 ms         |
+|        2 rings  |    1 ms         |
+|        1 rings  |    3 ms         |
+-------------------- Iterative Memory Usage -----------------
+| Number Of Rings | Usage            |
+|        10 rings  |    852 MB         |
+|        9 rings  |    851 MB         |
+|        8 rings  |    851 MB         |
+|        7 rings  |    851 MB         |
+|        6 rings  |    851 MB         |
+|        5 rings  |    851 MB         |
+|        4 rings  |    851 MB         |
+|        3 rings  |    851 MB         |
+|        2 rings  |    851 MB         |
+|        1 rings  |    851 MB         |
+-------------------- Iterative Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        20 rings  |    69561 ms         |
+|        19 rings  |    35253 ms         |
+|        18 rings  |    17302 ms         |
+|        17 rings  |    8798 ms         |
+|        16 rings  |    4166 ms         |
+|        15 rings  |    2042 ms         |
+|        14 rings  |    1230 ms         |
+|        13 rings  |    511 ms         |
+|        12 rings  |    287 ms         |
+|        11 rings  |    152 ms         |
+-------------------- Iterative Memory Usage -----------------
+| Number Of Rings | Usage            |
+|        20 rings  |    854 MB         |
+|        19 rings  |    854 MB         |
+|        18 rings  |    862 MB         |
+|        17 rings  |    854 MB         |
+|        16 rings  |    862 MB         |
+|        15 rings  |    859 MB         |
+|        14 rings  |    865 MB         |
+|        13 rings  |    858 MB         |
+|        12 rings  |    853 MB         |
+|        11 rings  |    852 MB         |
+-------------------- Iterative Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        25 rings  |    1002596 ms         |
+-------------------- Iterative Memory Usage -----------------
+| Number Of Rings | Usage            |
+|        25 rings  |    863 MB         |

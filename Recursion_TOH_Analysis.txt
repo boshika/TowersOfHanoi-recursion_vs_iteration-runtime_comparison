@@ -1,0 +1,60 @@
+-------------------- Recursive Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        10 rings  |    17 ms         |
+|        9 rings  |    6 ms         |
+|        8 rings  |    5 ms         |
+|        7 rings  |    3 ms         |
+|        6 rings  |    3 ms         |
+|        5 rings  |    1 ms         |
+|        4 rings  |    1 ms         |
+|        3 rings  |    1 ms         |
+|        2 rings  |    1 ms         |
+|        1 rings  |    3 ms         |
+-------------------- Recursive Memory Usage -----------------
+| Number Of Rings | Usage           |
+|        10 rings  |    851 MB         |
+|        9 rings  |    851 MB         |
+|        8 rings  |    851 MB         |
+|        7 rings  |    851 MB         |
+|        6 rings  |    851 MB         |
+|        5 rings  |    851 MB         |
+|        4 rings  |    851 MB         |
+|        3 rings  |    851 MB         |
+|        2 rings  |    851 MB         |
+|        1 rings  |    851 MB         |
+-------------------- Recursive Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        20 rings  |    7059 ms         |
+|        19 rings  |    3561 ms         |
+|        18 rings  |    1737 ms         |
+|        17 rings  |    877 ms         |
+|        16 rings  |    433 ms         |
+|        15 rings  |    211 ms         |
+|        14 rings  |    153 ms         |
+|        13 rings  |    76 ms         |
+|        12 rings  |    54 ms         |
+|        11 rings  |    54 ms         |
+-------------------- Recursive Memory Usage -----------------
+| Number Of Rings | Usage           |
+|        20 rings  |    853 MB         |
+|        19 rings  |    856 MB         |
+|        18 rings  |    866 MB         |
+|        17 rings  |    863 MB         |
+|        16 rings  |    861 MB         |
+|        15 rings  |    864 MB         |
+|        14 rings  |    857 MB         |
+|        13 rings  |    854 MB         |
+|        12 rings  |    852 MB         |
+|        11 rings  |    851 MB         |
+-------------------- Recursive Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        25 rings  |    241229 ms         |
+-------------------- Recursive Memory Usage -----------------
+| Number Of Rings | Usage           |
+|        25 rings  |    864 MB         |
+-------------------- Recursive Run Times -----------------
+| Number Of Rings | Execution Time   |
+|        30 rings  |    8132161 ms         |
+-------------------- Recursive Memory Usage -----------------
+| Number Of Rings | Usage           |
+|        30 rings  |    865 MB         |
