@@ -103,9 +103,9 @@ Refer to javadocs, in the doc folder for more information.
 
 ### Run-time Graphs
 
-![](Run Time.png?raw=true)
+![](RunTime.png?raw=true)
 
-![](Memory Usage.png?raw=true)
+![](MemoryUsage.png?raw=true)
 
 ## Team
 
