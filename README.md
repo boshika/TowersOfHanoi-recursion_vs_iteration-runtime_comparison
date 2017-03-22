@@ -101,6 +101,11 @@ Results are directed to **Recursion_TOH_Analysis.ext**
 
 Refer to javadocs, in the doc folder for more information.
 
+### Run-time Graphs
+
+[Run Time Comparison](./Run Time.png)
+[Memory USage](./Memory Usage.png)
+
 ## Team
 
 > Solo Project
